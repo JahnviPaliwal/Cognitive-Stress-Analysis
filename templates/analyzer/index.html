@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive Stress Analysis</title>
+  <link rel="stylesheet" href="{% static 'analyzer/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Cognitive Stress Analysis</h1>
+  </header>
+  <main>
+    <form id="voice-form" autocomplete="off">
+      <label for="voiceInput">Record your voice input:</label>
+      <div class="mic-container">
+        <button type="button" id="mic-btn" aria-label="Record">
+          <span id="mic-icon">&#127908;</span>
+        </button>
+        <span id="recording-status"></span>
+      </div>
+      <audio id="audio-preview" class="hidden" controls></audio>
+      <textarea id="voiceInput" name="voiceInput" rows="4" readonly placeholder="Your speech will appear here..."></textarea>
+      <button type="submit" id="generate-btn">Generate Report</button>
+    </form>
+    <div id="loading" class="hidden">
+      <div class="loader"></div>
+      <p>Analyzing your input...</p>
+    </div>
+    <section id="result" class="hidden">
+      <!-- Backend content will be inserted here -->
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="{% static 'analyzer/script.js' %}"></script>
+</body>
+</html>
