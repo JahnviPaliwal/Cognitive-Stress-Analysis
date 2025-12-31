@@ -4,7 +4,7 @@ import pandas as pd
 import librosa
 from pydub import AudioSegment
 import nltk
-from nltk.tokenize import word_tokenize, sent_tokenize
+
 from sklearn.cluster import KMeans
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics.pairwise import cosine_similarity
@@ -12,11 +12,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 # nltk.download("punkt", quiet=True)
 import nltk
 
-# Download punkt tokenizer at runtime if not already present
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
+# Download necessary tokenizers at runtime
+for resource in ["punkt", "punkt_tab"]:
+    try:
+        nltk.data.find(f"tokenizers/{resource}")
+    except LookupError:
+        nltk.download(resource)
+
+from nltk.tokenize import word_tokenize, sent_tokenize
+
 
 
 # -----------------------------
@@ -107,5 +111,6 @@ def generate_rating(df):
     )
 
     return int(np.clip(score/8*10,0,10))
+
 
 
