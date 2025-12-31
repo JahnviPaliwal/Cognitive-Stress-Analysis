@@ -1,6 +1,10 @@
 # Cognitive-Stress-Analysis
 This project provides a framework for analyzing speech patterns to detect potential cognitive stress. By combining acoustic feature extraction and linguistic analysis, the system evaluates audio input to generate quantitative metrics and comparative assessments of cognitive load.
 
+The Project is live at [link](https://jd-cognitive-stress-analysis.streamlit.app)
+
+
+
 ## Objective
 To develop an automated system that:
 - Converts speech to text
@@ -49,8 +53,7 @@ Manifested in speech through:
   - Isolation Forest
   - Cosine Similarity scoring
 
-
-
+<img width="1223" height="824" alt="image" src="https://github.com/user-attachments/assets/7a395447-a7e1-46b6-a68f-1549d9fbdd8f" />
 
 
 ## Implementation Overview
