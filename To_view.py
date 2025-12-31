@@ -81,11 +81,11 @@ if audio_path:
     curved_meter(rating)
 
     if rating <= 3:
-        st.markdown('<h3 style="text-align:center>Normal Level</h3>', unsafe_allow_html=True)
+        st.markdown('<h3 style="text-align:center">Normal Level</h3>', unsafe_allow_html=True)
     elif rating <= 6:
-        st.markdown('<h3 style="text-align:center>Little bit stressed</h3>', unsafe_allow_html=True)
+        st.markdown('<h3 style="text-align:center">Little bit stressed</h3>', unsafe_allow_html=True)
     else:
-        st.markdown('<h3 style="text-align:center>Highly Stressed</h3>', unsafe_allow_html=True)
+        st.markdown('<h3 style="text-align:center">Highly Stressed</h3>', unsafe_allow_html=True)
 
     st.dataframe(df)
 
@@ -97,4 +97,5 @@ if audio_path:
     )
 
     os.remove(audio_path)
+
 
