@@ -9,7 +9,7 @@ from sklearn.cluster import KMeans
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics.pairwise import cosine_similarity
 
-nltk.download("punkt", quiet=True)
+# nltk.download("punkt", quiet=True)
 import nltk
 
 # Download punkt tokenizer at runtime if not already present
@@ -107,4 +107,5 @@ def generate_rating(df):
     )
 
     return int(np.clip(score/8*10,0,10))
+
 
